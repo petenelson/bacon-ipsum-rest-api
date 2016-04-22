@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Bacon Ipsum REST API
  * Version: 1.0.0
- * Description: Endooint for baconipsum.com
+ * Description: Endpoint for baconipsum.com
  * Author: Pete Nelson
  * Author URI: https://baconipsum.com
  * Plugin URI: https://baconipsum.com
