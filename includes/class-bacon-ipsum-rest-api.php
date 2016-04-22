@@ -38,10 +38,17 @@ class Bacon_Ipsum_REST_API {
 
 		$response = new stdClass();
 
-		$response->filler = apply_filters( 'anyipsum-generate-filler', array(
+		$filler = apply_filters( 'anyipsum-generate-filler', array(
 			'number-of-paragraphs'   => $request['number-of-paragraphs'],
 			)
 		);
+
+		if ( 'slack' === $request['format'] ) {
+			$response->response_type = 'in_channel';
+			$response->text = implode( "\n\n", $filler );
+		} else {
+			$response->filler = $filler;
+		}
 
 		return rest_ensure_response( $response );
 	}
